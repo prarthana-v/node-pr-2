@@ -53,7 +53,7 @@ app.get("/deleterecord", (req, res) => {
 });
 
 app.get("/editrecord", (req, res) => {
-  // console.log(req.query.id);
+  console.log(req.query.id);
   let id = req.query.id;
   let single = data.find((val) => val.id == id);
   console.log(single);
