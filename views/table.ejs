@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="" align="center">
+      <h2>TodoList</h2>
+      <table border="1" class="table table-primary table-striped">
+        <thead>
+          <tr class="bg-primary">
+            <th>Id</th>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th colspan="1">Action</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% todolist.map((val,i)=>{ %>
+          <tr>
+            <td><%= val.id %></td>
+            <td><%= val.task %></td>
+            <td><%= val.date %></td>
+            <td><%= val.time %></td>
+            <td><%= val.status %></td>
+            <td>
+              <a href="/deleterecord?id=<%= val.id %>">delete</a>
+            </td>
+            <td>
+              <a href="/editrecord?id=<%= val.id %>">edit</a>
+            </td>
+          </tr>
+          <%})%>
+        </tbody>
+      </table>
+      <button class="btn btn-primay">
+        <a href="/add">Add</a>
+      </button>
+    </div>
+  </body>
+</html>
